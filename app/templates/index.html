@@ -1,0 +1,25 @@
+<!doctype html>
+        {% if title %}<title>{{ title }} - Demo</title>
+        {% else %}<title>Welcome to Demo!</title>
+        {% endif %}
+    </head>
+    <body>
+
+
+
+
+
+    </body>
+</html>
+
+{% extends "base.html" %}
+{% block content %}
+    <h1>Hello, {{ user.username }}!</h1>
+    Your class list:
+    {% for c in classes %}
+        <div>
+		<p>{{ c.classInfo.code }} {{ c.classInfo.title }}
+            		<br/>{{ c.instructor }}
+        	</p>
+	</div>
+    {% endfor %}{% endblock %}
